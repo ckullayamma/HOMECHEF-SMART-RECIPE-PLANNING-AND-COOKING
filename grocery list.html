@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> grocery list </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:linear-gradient(to bottom,whitesmoke,rgba(124, 130, 132))  ;
+        }
+
+        header {
+            background-color:orange;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .recommendation {
+            background-color: wheat;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .recommendation h2 {
+            margin-top: 0;
+        }
+
+        .recommendation p {
+            margin-bottom: 10px;
+        }
+
+        .recommendation img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #333;
+            font-size: 14px;
+            padding: 4px 8px;
+            margin-right: 8px;
+            border-radius: 4px;
+        }
+
+        .health-form {
+            margin-top: 40px;
+            margin-bottom: 30px;
+
+        }
+
+        .health-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .health-form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .health-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        img{
+            width: 100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Explore our family menus </h1>
+    </header>
+
+    <div class="container">
+        <div class="health-form">
+            <h2>Find Food According to Your Health Condition</h2>
+            <form id="healthForm" action="#">
+                <label for="health_condition">Enter your health condition:</label>
+                <input type="text" id="health_condition" name="health_condition" placeholder="e.g., Diabetes, Gluten intolerance, etc." required>
+                <button type="submit">Find Food</button>
+            </form>
+        </div>
+        <div class="grocery list">
+            <h2>Spicy tofu tahini noodle salad</h2>
+            <h3>Rs. 300/-</h3>
+            <a href="order page.html"><button class="order-now">Order Now</button></a>
+            <p>Whip up this easy noodle salad. With minimal cooking involved, it helps on the energy usage front. Switch up the veg depending on what’s in season</p>
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2023/12/Crunchy-creamy-spicy-noodle-salad-e73be27.jpg?quality=90&webp=true&resize=375,341" alt="noodle">
+            <span class="tag">Vegetarian</span>
+        </div>
+
+        <div class="grocery list">
+            <h2>Fennel-roasted cauliflower with quinoa</h2>
+            <h3>Rs. 195/-</h3>
+            <a href="order page.html"><button class="order-now">Order Now</button></a>
+            <p>Pile this colourful vegetable quinoa salad onto a plate, top with roasted cauliflower and drizzle over the garlic yogurt for a healthy, gluten-free dinner.</p>
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2021/03/Fennel-roasted-cauliflower-with-quinoa-2437e83.jpg?quality=90&webp=true&resize=375,341" alt="quinoa salad">
+            <span class="tag">Vegetarian</span>
+        </div>
+
+        <div class="grocery list">
+            <h2>Spinach, sweet potato & lentil dhal</h2>
+            <h3>Rs. 250/-</h3>
+            <a href="order page.html"><button class="order-now">Order Now</button></a>
+            <p>A comforting vegan one-pot recipe that counts for 3 of your 5-a-day! You can't go wrong with this iron-rich, low-fat, low-calorie supper</p>
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/spinach-sweet-potato-and-lentil-dhal-be8fae5.jpg?quality=90&webp=true&resize=375,341" alt="spinach">
+            <span class="tag">Vegetarian</span>
+        </div>
+
+        
+    </div>
+
+    <script>
+        document.getElementById("healthForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var healthCondition = document.getElementById("health_condition").value.toLowerCase();
+            if (healthCondition === "diabetes") {
+                window.location.href = "diabetics.html";
+            } else if (healthCondition === "gluten intolerance") {
+                window.location.href = "gluten.html";
+            } else {
+                alert("Sorry, we currently do not have specific recommendations for this health condition.");
+            }
+        });
+    </script>
+</body>
+</html>
